@@ -1,0 +1,132 @@
+#logo {
+    background-color: rgb(255, 255, 255);
+    width: 30%;
+}
+
+nav img {
+    margin-left: 8rem;
+    width: 38%;
+}
+
+nav {
+    position: sticky;
+    transition: top 0.3s;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: white;
+}
+
+nav ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    list-style-type: none;
+}
+
+nav ul li {
+    margin: 0;
+    padding: 0 1rem;
+}
+
+nav ul ul li {
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.a {
+    color: black;
+    font-size: 14px;
+    text-decoration: none;
+    letter-spacing: 1px;
+    font-weight: bold;
+    transition: all 0.3s ease 0s;
+    display: block;
+    border-radius: 2px;
+    padding: 10px 5px;
+}
+
+.a:hover {
+    background-color: rgba(209, 201, 159, 0.6);
+    text-decoration: underline;
+}
+
+nav .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #ffffff;
+    width: 100px;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.1);
+    z-index: 1;
+    border-radius: 2px;
+}
+
+nav .dropdown-content li {
+    display: block;
+}
+
+nav .dropdown.active .dropdown-content {
+    display: block;
+}
+
+nav .leftnav {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+}
+
+nav signin {
+    word-spacing: 2px;
+}
+
+nav .search-container {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+}
+
+nav .search-container input[type="text"] {
+    outline: 0;
+    padding: 5px;
+    border: none;
+    border-bottom: 2px solid black;
+    border-radius: 1px;
+}
+
+nav .search-container button {
+    background-color: white;
+    color: black;
+    padding: 7px;
+    border: none;
+    border-radius: 2px;
+    margin-left: 1px;
+    margin-right: 2rem;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+}
+
+nav .search-container button:hover {
+    background-color: rgba(209, 201, 159, 0.6);
+}
+
+nav .cart-logo a {
+    background-color: white;
+    color: black;
+    padding: 10px 5px;
+    border: none;
+    border-radius: 2px;
+    margin-left: 2rem;
+    margin-right: 3rem;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+}
+
+nav .cart-logo a:hover {
+    background-color: rgba(209, 201, 159, 0.6);
+}

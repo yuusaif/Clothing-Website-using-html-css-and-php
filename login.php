@@ -1,4 +1,21 @@
-<?php
+<html>
+
+<head>
+    <title>Log In</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&family=Poppins:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="SignUpForm/style_login_page.css">
+    <link rel="stylesheet" href="./navbar/navbar.css">
+
+</head>
+
+
+<body>
+    <?php
     include "middleware.php";
     if ($authenticated) {
         header("location: main.php");
@@ -17,92 +34,36 @@
             header("location: main.php");
         } else {
             $_SESSION["authenticated"] = false;
-            $login_error_message = "Please correct email and password";
+            $login_error_message = "Incorrect email or password!";
         }
     }
 
     dbClose($conn);
     ?>
 
-<html>
-
-<head>
-    <title>Log In</title>
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&family=Poppins:wght@500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="SignUpForm/style_login_page.css">
-
-</head>
-
-
-<body>
-
-   <nav>
-        <img src="Home Page\img\main logo.jpg" alt="Grinder$">
-        <ul>
-            <li class="dropdown">
-                <a href="#" onclick="toggleDropdown(event)">Women</a>
-                <ul class="dropdown-content">
-                    <li><a href="#">T-shirts</a></li>
-                    <li><a href="#">Pants</a></li>
-                    <li><a href="#">Hoodies</a></li>
-                    <li><a href="#">Shirts</a></li>
-                    <li><a href="#">Tops</a></li>
-                    <li><a href="#">Skirts</a></li>
-                </ul>
-            </li>
-            <li class="dropdown">
-                <a href="#" onclick="toggleDropdown(event)">Men</a>
-                <ul class="dropdown-content">
-                    <li><a href="#">T-shirts</a></li>
-                    <li><a href="#">Pants</a></li>
-                    <li><a href="#">Hoodies</a></li>
-                    <li><a href="#">Shirts</a></li>
-                </ul>
-            </li>
-            <li class="dropdown">
-                <a href="#" onclick="toggleDropdown(event)">Footwear</a>
-                <ul class="dropdown-content">
-                    <li><a href="#">Men</a></li>
-                    <li><a href="#">Women</a></li>
-                </ul>
-            </li>
-            <li><a href="#">About</a></li>
-        </ul>
-        <div class="leftnav">
-            <div class="search-container">
-                <input type="text" placeholder="Search...">
-                <button type="submit"><span class="material-symbols-outlined">
-                        search
-                    </span></button>
-            </div>
-            <div class="signin">
-                <a href="login.php">Sign In <i class="fa-solid fa-user fa-lg"
-                        style="color: #000000;"></i></a>
-
-            </div>
-            <div class="cart-logo">
-                <a href="#"><i class="fa-solid fa-cart-shopping fa-xl" style="color: #000000;"></i></a>
-            </div>
+    <?php
+    include "navbar.php";
+    ?>
+    <section class="container">
+        <div class="sign-up-form">
+            <h1> Sign In</h1>
+            <form method="post" action="login.php">
+                <input type="email" class="input-box" placeholder="Your Email" name="email">
+                <div class="password-wrapper">
+                    <input type="password" class="input-box" placeholder="Your password" name="password" id="password">
+                    <span>
+                        <i class="fa fa-eye" aria-hidden="true" id="eye" onclick="toggle()"></i>
+                    </span>
+                </div>
+                <label for="" style="color: red; font-size:small;"><?php echo $login_error_message; ?></label>
+                <button type="submit" class="signup-btn">Sign In</button>
+                <div class="signup">
+                    <p>Do not have an account? <a href="signup.php">Sign Up</a></p>
+                </div>
+            </form>
         </div>
-    </nav>
-    <div class="sign-up-form">
+    </section>
 
-        <h1> Sign In</h1>
-        <form method="post" action="login.php">
-            <input type="email" class="input-box" placeholder="Eamil" name="email">
-            <input type="password" class="input-box" placeholder="Your password" name="password">
-            <label><?php echo $login_error_message; ?></label>
-            <button type="submit" class="signup-btn">Sign In</button>
-            <div class="signup">
-                <p>Do not have an account? <a href="signup.php">Sign Up</a></p>
-            </div>
-        </form>
-    </div>
 
     <footer>
         <div class="footertxt">
@@ -114,7 +75,7 @@
             </ul>
         </div>
     </footer>
-     <script src="SignUpForm/script.js"></script>
+    <script src="./SignUpForm/eye.js"></script>
 </body>
 
 </html>
