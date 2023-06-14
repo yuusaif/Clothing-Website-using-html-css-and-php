@@ -85,6 +85,8 @@ body {
 }
 
 select {
+    width: 50px;
+    height: 27px;
     margin-bottom: 10px;
     margin-top: 10px;
     outline: 0;
@@ -95,15 +97,10 @@ select {
     border-radius: 3px;
 }
 
-#size {
-    width: 50px;
-    height: 27px;
-}
-
 #addtocart {
     transition: all 0.3s ease 0s;
-    color: rgb(255, 255, 255);
-    background-color: rgba(0, 0, 0);
+    color: rgb(209, 201, 159);
+    background-color: rgba(0, 0, 0, 0.8);
     width: 40%;
     padding: 10px;
     border-radius: 3px;
@@ -115,5 +112,6 @@ select {
 }
 
 #addtocart:hover {
-    background-color: #2b2b2b;
+    background-color: rgb(133, 129, 106);
+    color: black;
 }

@@ -9,7 +9,7 @@ nav img {
 }
 
 nav {
-    position: sticky;
+    position: fixed;
     transition: top 0.3s;
     width: 100%;
     display: flex;

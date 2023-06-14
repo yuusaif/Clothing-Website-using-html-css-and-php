@@ -50,7 +50,7 @@
             <ul>
                 <li class="dropdown">
 
-                    <a href="#" class="a" onclick="toggleDropdown(event)"><?php echo $user["username"]; ?> <i class="fa-solid fa-user fa-lg" style="color: #000000;"></i></a>
+                    <a href="#" class="a" onclick="toggleDropdown(event)"><?php echo $user["username"]; ?> <i class="fa-solid fa-user fa-xl" style="color: #000000;"></i></a>
                     <ul class="dropdown-content">
 
                         <li><a href="#" class="a">Profile</a></li>
@@ -63,13 +63,13 @@
         <?php } else { ?>
             <div class="signin">
 
-                <a href="login.php" class="a">Sign In <i class="fa-solid fa-user fa-lg" style="color: #000000;"></i></a>
+                <a href="login.php" class="a">Sign In <i class="fa-solid fa-user fa-xl" style="color: #000000;"></i></a>
 
             </div>
         <?php } ?>
 
         <div class="cart-logo">
-            <a href="#" class="a"><i class="fa-solid fa-cart-shopping fa-xl" style="color: #000000;"></i></a>
+            <a href="cart.php" class="a"><i class="fa-solid fa-bag-shopping fa-xl" style="color: #000000;"></i></a>
         </div>
 
     </div>

@@ -14,12 +14,43 @@
 
     <?php
     include "middleware.php";
+    if (isset($_SESSION['id'])) {
+        $user_ID = $_SESSION["id"];
+    }
+
     // $category = $_GET["category"];
     $name = "";
     if (isset($_GET["name"])) {
         $name = $_GET["name"];
     }
     $all = getQuery($conn, "select * from product where name like '%$name%'");
+
+    if (isset($_POST["addtocart"])) {
+
+        if (!isset($_SESSION['id'])) {
+            header("location:login.php");
+        }
+
+
+        $product_name = $_POST["product_name"];
+        $product_price = $_POST["product_price"];
+        $product_image = $_POST["product_image"];
+        $product_quantity = $_POST["quantity"];
+        $product_size = $_POST["size"];
+
+        $select_cart = mysqli_query($conn, "SELECT * FROM `cart` WHERE name='$product_name'
+            AND user_id = '$user_ID'") or die('query failed');
+
+        if (mysqli_num_rows($select_cart) > 0) {
+            $message[] = "product already added to cart!";
+        } else {
+            mysqli_query($conn, "INSERT INTO `cart`(user_id,name,price,image,quantity,size)VALUES
+        ('$user_ID','$product_name','$product_price','$product_image','$product_quantity','$product_size')") or die('query failed');
+            $message[] = "product added to cart!";
+        }
+    }
+
+
 
     ?>
 
@@ -50,7 +81,7 @@
                         <p class="price"><?php echo $item["price"]; ?></p>
                         <form action="product.php" method="post">
                             <label>Quantity: </label>
-                            <input type="number" name="quantity" id="quantity" min="1">
+                            <input type="number" name="quantity" id="quantity" min="1" value="1">
                             <label for="lang">Size: </label>
                             <select name="size" id="size">
                                 <option value="XS">XS</option>
@@ -61,6 +92,16 @@
                                 <option value="XXL">XXL</option>
                             </select>
                             <br>
+
+
+                            <input type="hidden" name="product_name" value="<?php echo  $item["name"]; ?>">
+                            <input type="hidden" name="product_price" value="<?php echo  $item["price"]; ?>">
+                            <input type="hidden" name="product_image" value="<?php echo  $item["picture"]; ?>">
+
+
+
+
+
                             <button type="submit" name="addtocart" id="addtocart">Add to Cart</button>
                         </form>
                 </div>

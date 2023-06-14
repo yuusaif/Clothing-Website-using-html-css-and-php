@@ -1,0 +1,141 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Lato', sans-serif;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+
+.shopping-cart {
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 3px;
+}
+
+.shopping-cart h1 {
+    color: #000000;
+}
+
+.heading {
+    margin: 80px 0px 40px 0px;
+}
+
+thead {
+    border-bottom: 2px solid #000000;
+}
+
+table {
+    width: 70%;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    padding: 10px;
+    text-align: center;
+}
+
+th {
+    background-color: #ffffff;
+}
+
+.table-row:hover {
+    background-color: rgba(209, 201, 159, 0.6);
+}
+
+.table-row {
+    border-bottom: 1px solid #000000;
+}
+
+.table-bottom {
+    border-bottom: 0px;
+}
+
+.table-bottom td {
+    /* text-align: center; */
+    font-weight: bold;
+}
+
+.total {
+    padding-right: 80px;
+    text-align: right;
+}
+
+.option-btn {
+    padding: 4px 5px;
+    text-decoration: none;
+    transition: all 0.3s ease 0s;
+    color: rgb(209, 201, 159);
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 3px;
+    border: none;
+}
+
+.option-btn:hover {
+    background-color: rgb(133, 129, 106);
+    color: black;
+    cursor: pointer;
+
+
+
+}
+
+.delete-btn {
+    padding: 5px 10px;
+    background-color: transparent;
+    transition: transform .2s;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.delete-btn:hover i {
+    transform: scale(1.2);
+    cursor: pointer;
+
+}
+
+.btn {
+    display: block;
+    width: 100%;
+    max-width: 200px;
+    margin: 20px auto;
+    padding: 10px 20px;
+    transition: all 0.3s ease 0s;
+    color: rgb(209, 201, 159);
+    background-color: rgba(0, 0, 0, 0.8);
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.btn.disabled {
+    display: none;
+}
+
+.btn:hover {
+    background-color: rgb(133, 129, 106);
+    color: black;
+    cursor: pointer;
+}
+
+.quantity-input {
+    width: 30px;
+    height: 13px;
+    padding: 5px 0px 5px 5px;
+    border: 1px solid #646464;
+    border-radius: 3px;
+}
+
+.cart-btn {
+    margin: 40px 0px 40px 0px;
+}
+
+@media (max-width: 768px) {
+    .btn {
+        max-width: 100%;
+    }
+}
