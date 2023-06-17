@@ -9,12 +9,44 @@ body {
 
 
 .banner {
+    color: #000000;
+    padding: 100px 0px 0px 30px;
+    border-bottom: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
-    background-color: #C0DFCD;
-    color: #342b2b;
-    padding: 20px;
-    box-shadow: 0 2px 4px rgba(83, 185, 176, 0.1);
-    text-align: center;
+.banner h4 {
+    padding: 0px 8px 5px 0px;
+}
+
+.banner .search-container {
+    display: flex;
+    align-items: center;
+    padding: 0px 0px 10px 0px;
+}
+
+.banner .search-container input[type="text"] {
+    outline: 0;
+    padding: 5px 0px 5px 0px;
+    border: none;
+    border-bottom: 2px solid black;
+    border-radius: 1px;
+}
+
+.banner .search-container button {
+    background-color: white;
+    color: black;
+    padding: 6px;
+    border: none;
+    border-radius: 2px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+}
+
+.banner .search-container button:hover {
+    background-color: rgba(209, 201, 159, 0.6);
 }
 
 .banner h1 {

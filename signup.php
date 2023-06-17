@@ -14,7 +14,7 @@
 
 <body>
     <?php
-    include "middleware.php";
+    include "navbar.php";
     include "validation.php";
     if ($authenticated) {
         header("location:main.php");
@@ -47,10 +47,6 @@
     }
 
     dbClose($conn);
-    ?>
-
-    <?php
-    include "navbar.php"
     ?>
     <section class="container">
         <div class="sign-up-form">

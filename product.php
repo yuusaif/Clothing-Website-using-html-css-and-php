@@ -13,17 +13,19 @@
 <body>
 
     <?php
-    include "middleware.php";
+    include "navbar.php";
     if (isset($_SESSION['id'])) {
         $user_ID = $_SESSION["id"];
     }
-
-    // $category = $_GET["category"];
+    $type = "";
+    if (isset($_GET["type"])) {
+        $type = $_GET["type"];
+    }
     $name = "";
     if (isset($_GET["name"])) {
         $name = $_GET["name"];
     }
-    $all = getQuery($conn, "select * from product where name like '%$name%'");
+    $all = getQuery($conn, "select * from product where name like '%$name%' and type like  '%$type%'");
 
     if (isset($_POST["addtocart"])) {
 
@@ -55,12 +57,14 @@
     ?>
 
 
-    <?php
-    include "navbar.php"
-    ?>
-
-
     <div class="banner">
+        <h4 class="banner-text">Search products: </h4>
+        <div class="search-container">
+            <form action="product.php" name="search" method="get">
+                <input type="text" name="name" placeholder="...">
+                <button type="submit"><i class="fa-solid fa-magnifying-glass fa-xl" style="color: #000000;"></i></button>
+            </form>
+        </div>
 
     </div>
 
@@ -78,7 +82,8 @@
 
                 <div class="card-content">
                     <h2><?php echo $item["name"]; ?></h>
-                        <p class="price"><?php echo $item["price"]; ?></p>
+                        <p class="price"><?php echo $item["price"]; ?> BDT
+                        <p>
                         <form action="product.php" method="post">
                             <label>Quantity: </label>
                             <input type="number" name="quantity" id="quantity" min="1" value="1">

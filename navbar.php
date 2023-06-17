@@ -1,79 +1,56 @@
-<nav>
-    <a href="main.php" id="logo"><img src="img\main logo.jpg" alt="Grinder$" /></a>
+ <?php
+    include "middleware.php";
+    ?>
+ <nav>
+     <a href="main.php" id="logo"><img src="img\main logo.jpg" alt="Grinder$" /></a>
 
-    <ul>
+     <ul>
 
-        <li class="dropdown">
-            <a href="#" class="a" onclick="toggleDropdown(event)">Women</a>
-            <ul class="dropdown-content">
-                <li><a href="#" class="a">T-shirts</a></li>
-                <li><a href="#" class="a">Pants</a></li>
-                <li><a href="#" class="a">Hoodies</a></li>
-                <li><a href="#" class="a">Shirts</a></li>
-                <li><a href="#" class="a">Tops</a></li>
-                <li><a href="#" class="a">Skirts</a></li>
-            </ul>
-        </li>
+         <li class="dropdown">
+             <a href="product.php?type=Women" class="a">Women</a>
+         </li>
 
-        <li class="dropdown">
-            <a href="#" class="a" onclick="toggleDropdown(event)">Men</a>
-            <ul class="dropdown-content">
-                <li><a href="#" class="a">T-shirts</a></li>
-                <li><a href="#" class="a">Pants</a></li>
-                <li><a href="#" class="a">Hoodies</a></li>
-                <li><a href="#" class="a">Shirts</a></li>
-            </ul>
-        </li>
+         <li class="dropdown">
+             <a href="product.php?type=Men" class="a">Men</a>
+         </li>
 
-        <li class="dropdown">
-            <a href="#" class="a" onclick="toggleDropdown(event)">Footwear</a>
-            <ul class="dropdown-content">
-                <li><a href="#" class="a">Men</a></li>
-                <li><a href="#" class="a">Women</a></li>
-            </ul>
-        </li>
+         <li class="dropdown">
+             <a href="product.php?type=Footwear" class="a">Footwear</a>
+         </li>
 
-        <li class="dropdown"><a class="a" href="aboutus.php">About Us</a></li>
+         <li class="dropdown"><a class="a" href="aboutus.php">About Us</a></li>
 
-    </ul>
+     </ul>
 
-    <div class="leftnav">
+     <div class="leftnav">
+         <?php if ($authenticated) { ?>
+             <ul>
+                 <li class="dropdown">
 
-        <div class="search-container">
+                     <a href="#" class="a" onclick="toggleDropdown(event)"><?php echo $user["username"]; ?> <i class="fa-solid fa-user fa-xl" style="color: #000000;"></i></a>
+                     <ul class="dropdown-content">
 
-            <input type="text" placeholder="Search...">
-            <button type="submit"><i class="fa-solid fa-magnifying-glass fa-xl" style="color: #000000;"></i></button>
+                         <li><a href="#" class="a">Profile</a></li>
+                         <li><a href="logout.php" class="a">Logout</a></li>
 
-        </div>
+                     </ul>
 
-        <?php if ($authenticated) { ?>
-            <ul>
-                <li class="dropdown">
+                 </li>
+             </ul>
+         <?php } else { ?>
+             <div class="signin">
 
-                    <a href="#" class="a" onclick="toggleDropdown(event)"><?php echo $user["username"]; ?> <i class="fa-solid fa-user fa-xl" style="color: #000000;"></i></a>
-                    <ul class="dropdown-content">
+                 <a href="login.php" class="a">Sign In <i class="fa-solid fa-user fa-xl" style="color: #000000;"></i></a>
 
-                        <li><a href="#" class="a">Profile</a></li>
-                        <li><a href="logout.php" class="a">Logout</a></li>
+             </div>
+         <?php } ?>
 
-                    </ul>
+         <div class="cart-logo">
+             <a href="cart.php" class="a"><i class="fa-solid fa-bag-shopping fa-xl" style="color: #000000;"></i></a>
+         </div>
 
-                </li>
-            </ul>
-        <?php } else { ?>
-            <div class="signin">
+     </div>
 
-                <a href="login.php" class="a">Sign In <i class="fa-solid fa-user fa-xl" style="color: #000000;"></i></a>
+ </nav>
 
-            </div>
-        <?php } ?>
-
-        <div class="cart-logo">
-            <a href="cart.php" class="a"><i class="fa-solid fa-bag-shopping fa-xl" style="color: #000000;"></i></a>
-        </div>
-
-    </div>
-
-</nav>
-
-<script src="./navbar/script.js"></script>
+ <script src="./navbar/script.js"></script>

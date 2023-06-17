@@ -13,7 +13,6 @@
 
 <body>
     <?php
-    include "middleware.php";
     include "navbar.php";
     ?>
     <div class="container-aboutus">

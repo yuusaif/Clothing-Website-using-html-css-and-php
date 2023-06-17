@@ -12,7 +12,6 @@
 
 <body>
     <?php
-    include "middleware.php";
     include "navbar.php";
     ?>
     <section class="hero">

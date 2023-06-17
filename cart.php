@@ -18,7 +18,6 @@
 
   <body>
       <?php
-        include "middleware.php";
         include "navbar.php";
         if (!isset($_SESSION['id'])) {
             header("location:login.php");
