@@ -26,7 +26,7 @@
     <section class="new">
         <div class="newtxt">
             <h2>New Arrivals</h2>
-            <a href="#" id="button">Shop Now</a><br>
+            <a href="product.php?name=NEW" id="button">Shop Now</a><br>
             <div class="para">Explore our latest collection, discover your own style narrative, and unleash your inner
                 urban
                 warrior. Get ready to
@@ -40,7 +40,7 @@
         <img src="img\season.jpg">
         <div class="seasontxt">
             <h2>Summer Essentials</h2>
-            <a href="#" id="button">Shop Now</a>
+            <a href="product.php?name=shirt" id="button">Shop Now</a>
             <div class="para">At Grinders, we are all about embracing the vibrant energy and laid-back vibes of the
                 summer season. Get
                 ready to elevate your style game with our collection of summer streetwear that effortlessly blends
@@ -53,7 +53,7 @@
     <section class="footwear">
         <div class="footweartxt">
             <h2>Footwear</h2>
-            <a href="#" id="button">Shop Now</a>
+            <a href="product.php?type=2" id="button">Shop Now</a>
             <div class="para">Our footwear collection is designed to elevate your style while providing the utmost
                 comfort and support. From sleek
                 sneakers to rugged boots and everything in between, we offer a diverse range of designs to cater to your

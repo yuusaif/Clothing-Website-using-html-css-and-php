@@ -16,7 +16,6 @@
 <body>
     <?php
     include "navbar.php";
-    include "middleware.php";
     if ($authenticated) {
         header("location: main.php");
     }

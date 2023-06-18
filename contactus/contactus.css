@@ -1,0 +1,25 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Lato', sans-serif;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+
+.contact-header {
+    padding: 100px 0px 50px 0px;
+    background-color: rgba(209, 201, 159, 0.6);
+    font-size: 25px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.contact-way {
+    padding: 30px 0px 30px 0px;
+    font-size: 22px;
+    text-align: center;
+}
+
+.headp {
+    font-weight: bold;
+}
